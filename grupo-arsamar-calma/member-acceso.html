@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acceso al área privada Arsamar Member y solicitud de invitación para tiendas.">
+  <title>Acceso Arsamar Member | Grupo Arsamar</title>
+  <link rel="icon" href="img/logo-simbolo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Barra superior: deja claro desde el primer segundo que es una web para profesionales -->
+  <p class="barra-superior">Web para tiendas y distribuidores · <a href="distribuidores.html#alta">Solicita el catálogo</a></p>
+
+  <!-- Cabecera: se repite igual en todas las páginas -->
+  <header>
+    <p class="logo">
+      <a href="index.html">
+        <img src="img/logo-simbolo.svg" alt="" width="64" height="64">
+        <span class="logo-texto">
+          <span class="logo-nombre">Arsamar</span>
+          <span class="logo-lema">Grupo · Equipaje de viaje</span>
+        </span>
+      </a>
+    </p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="grupo.html">El grupo</a></li>
+        <li><a href="catalogo.html">Colecciones</a></li>
+        <li><a href="distribuidores.html">Distribuidores</a></li>
+        <li><a href="member.html" class="enlace-member" aria-current="page">Member</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="herramientas">
+      <!-- Buscador: sugiere modelos con datalist y lleva al catálogo -->
+      <form class="buscador" action="catalogo.html" method="get" role="search">
+        <label for="buscar">Buscar un modelo</label>
+        <input type="search" id="buscar" name="q" list="modelos" placeholder="Buscar modelo">
+        <datalist id="modelos">
+          <option value="Jaslen Venecia">
+          <option value="Jaslen Padua">
+          <option value="Jaslen Varese">
+          <option value="Jaslen Turín">
+          <option value="Jaslen Colchester">
+          <option value="Jaslen Nápoles">
+          <option value="Itaca Havel">
+          <option value="Itaca Loira">
+          <option value="Itaca Cassley">
+          <option value="Itaca Witham">
+          <option value="Skpat Niza">
+          <option value="Skpat NYC">
+        </datalist>
+        <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </form>
+      <a class="icono" href="member-acceso.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor"/></svg><span>Acceso Member</span></a>
+    </div>
+  </header>
+
+  <main id="contenido" class="tema-member">
+    <section class="bloque">
+      <div class="contenedor">
+        <header class="cabecera-bloque">
+          <p class="sello-member">Arsamar Member</p>
+          <h1>Área privada</h1>
+          <p class="intro">Entra con las claves que te enviamos al incorporarte al programa, o solicita tu invitación.</p>
+        </header>
+
+        <div class="acceso">
+          <!-- DEMOSTRACIÓN: el formulario lleva al panel de ejemplo. La contraseña no tiene
+               atributo name, así que no se envía. En la versión real se conecta a un sistema
+               de usuarios (por ejemplo, WordPress + WooCommerce B2B o Shopify B2B). -->
+          <form class="formulario" action="member-area.html" method="get">
+            <h2>Iniciar sesión</h2>
+            <p>
+              <label for="acceso-email">Correo de la tienda</label>
+              <input type="email" id="acceso-email" autocomplete="email" value="tienda@ejemplo.com" required>
+            </p>
+            <p>
+              <label for="acceso-clave">Contraseña</label>
+              <input type="password" id="acceso-clave" autocomplete="current-password" value="demostracion" required>
+            </p>
+            <p class="casilla">
+              <input type="checkbox" id="recordar">
+              <label for="recordar">Recordarme en este dispositivo</label>
+            </p>
+            <p><button type="submit" class="boton">Entrar al área Member</button></p>
+            <p class="nota-demo">Versión de demostración: pulsa «Entrar» para ver el área privada de ejemplo.</p>
+          </form>
+
+          <form class="formulario" id="invitacion" action="#" method="post">
+            <h2>Solicitar invitación</h2>
+            <div class="campos">
+              <p>
+                <label for="inv-tienda">Nombre de la tienda</label>
+                <input type="text" id="inv-tienda" name="tienda" autocomplete="organization" required>
+              </p>
+              <p>
+                <label for="inv-localidad">Localidad</label>
+                <input type="text" id="inv-localidad" name="localidad" required>
+              </p>
+              <p>
+                <label for="inv-nombre">Persona de contacto</label>
+                <input type="text" id="inv-nombre" name="nombre" autocomplete="name" required>
+              </p>
+              <p>
+                <label for="inv-telefono">Teléfono</label>
+                <input type="tel" id="inv-telefono" name="telefono" autocomplete="tel" required>
+              </p>
+              <p class="ancho-completo">
+                <label for="inv-email">Correo electrónico</label>
+                <input type="email" id="inv-email" name="email" autocomplete="email" required>
+              </p>
+              <p class="ancho-completo">
+                <label for="inv-relacion">¿Trabajas ya nuestras marcas?</label>
+                <select id="inv-relacion" name="relacion" required>
+                  <option value="">Elige una opción</option>
+                  <option value="si-mas-2">Sí, desde hace más de dos temporadas</option>
+                  <option value="si-reciente">Sí, desde hace poco</option>
+                  <option value="no">Todavía no</option>
+                </select>
+              </p>
+              <p class="ancho-completo">
+                <label for="inv-mensaje">Cuéntanos sobre tu tienda</label>
+                <textarea id="inv-mensaje" name="mensaje" rows="4"></textarea>
+              </p>
+            </div>
+            <p class="casilla">
+              <input type="checkbox" id="inv-privacidad" name="privacidad" required>
+              <label for="inv-privacidad">He leído y acepto la <a href="legal.html#privacidad">política de privacidad</a>.</label>
+            </p>
+            <p><button type="submit" class="boton boton-cuero">Enviar solicitud</button></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie: se repite igual en todas las páginas -->
+  <footer>
+    <div class="contenedor">
+      <div class="pie-rejilla">
+        <section>
+          <p class="logo-nombre">Arsamar</p>
+          <p>Grupo familiar de Atzeneta d'Albaida dedicado al diseño y la distribución de maletas, bolsas de viaje y mochilas con las marcas Jaslen, Itaca y Skpat.</p>
+        </section>
+        <section>
+          <h2>El grupo</h2>
+          <ul>
+            <li><a href="grupo.html">Quiénes somos</a></li>
+            <li><a href="catalogo.html">Colecciones</a></li>
+            <li><a href="distribuidores.html">Distribuidores</a></li>
+            <li><a href="member.html">Arsamar Member</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Marcas</h2>
+          <ul>
+            <li><a href="catalogo.html#jaslen">Jaslen</a></li>
+            <li><a href="catalogo.html#itaca">Itaca</a></li>
+            <li><a href="catalogo.html#skpat">Skpat</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contacto</h2>
+          <!-- CONFIRMAR: teléfono, correo y dirección completa reales -->
+          <address>
+            Arsamar Enterprise, S.L.<br>
+            46869 Atzeneta d'Albaida (València)<br>
+            <a href="tel:+34960000000">+34 960 00 00 00</a><br>
+            <a href="mailto:comercial@arsamar.com">comercial@arsamar.com</a>
+          </address>
+        </section>
+      </div>
+      <div class="pie-final">
+        <p>&copy; 2026 Grupo Arsamar · Arsamar Enterprise, S.L. Todos los derechos reservados.</p>
+        <p><a href="legal.html#aviso-legal">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

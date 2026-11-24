@@ -1,0 +1,2985 @@
+/* ==========================================================
+   Grupo Arsamar — Hoja de estilos (versión «premium»)
+   Inspiración: la calma de Lululemon. Mucho espacio, pocas
+   cosas a la vez, colores cálidos y movimientos lentos.
+   Web corporativa B2B (distribuidores y tiendas) con el área
+   privada Arsamar Member (colaboradores VIP).
+   HTML5 + CSS3, sin JavaScript.
+   Enfoque mobile first: los estilos base son para móvil y las
+   media queries del final los amplían para tableta y escritorio.
+   ========================================================== */
+
+/* ---------- 0. Fuente propia con @font-face (Inter, licencia SIL OFL) ---------- */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-300-normal.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500 700;
+  font-display: swap;
+}
+
+/* Bodoni Moda (licencia SIL OFL): serif editorial para los titulares */
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("../fonts/bodoni-moda-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("../fonts/bodoni-moda-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- 1. Variables (paleta, tipografía, espacios) ---------- */
+:root {
+  /* Paleta sobria: azul marino (confianza), crema (calidez) y cuero (producto) */
+  --color-fondo: #f7f3ec;
+  --color-superficie: #ffffff;
+  --color-marino: #1d1c1a;
+  --color-marino-2: #3a3835;
+  --color-texto: #1d1c1a;
+  --color-texto-suave: #6b665f;
+  --color-linea: #e9e4dc;
+  --color-crema: #efe9df;
+  --color-cuero: #7d6240;          /* contraste AA sobre blanco y crema */
+  --color-cuero-oscuro: #5f4a30;
+  --color-dorado: #b8976a;         /* solo como detalle sobre fondo oscuro */
+  --color-negro: #161514;          /* fondo del área Member */
+  --color-negro-2: #201e1c;
+  --color-marfil: #efe6d6;
+
+  --fuente-titulos: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fuente: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Serif editorial de lujo, incluida en la carpeta fonts/ */
+  --fuente-editorial: "Bodoni Moda", "Didot", "Bodoni 72", "Bodoni MT", "Libre Bodoni", Georgia, "Times New Roman", serif;
+
+  --espacio-xs: 0.5rem;
+  --espacio-s: 1rem;
+  --espacio-m: 1.5rem;
+  --espacio-l: 3rem;
+  --espacio-xl: 7rem;
+
+  --ancho-max: 76rem;
+  --radio: 8px;
+  --sombra: 0 1px 2px rgba(43, 42, 40, 0.04), 0 18px 40px rgba(43, 42, 40, 0.06);
+  --transicion: 0.5s cubic-bezier(0.22, 1, 0.36, 1);   /* movimientos lentos y suaves */
+}
+
+/* ---------- 2. Reset básico y modelo de caja ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1.0625rem;            /* 17 px: cómodo para leer a cualquier edad */
+  line-height: 1.65;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-cuero);
+  outline-offset: 3px;
+}
+
+/* ---------- 3. Tipografía ---------- */
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--espacio-s);
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-marino);
+}
+
+h1 {
+  font-size: 2.1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 var(--espacio-s);
+}
+
+/* Texto pequeño en mayúsculas encima de los títulos */
+.antetitulo {
+  margin-bottom: var(--espacio-xs);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cuero);
+}
+
+.intro {
+  max-width: 42rem;
+  font-size: 1.125rem;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 4. Enlace "saltar al contenido" (accesibilidad) ---------- */
+.saltar {
+  position: absolute;
+  left: -999rem;
+  padding: var(--espacio-xs) var(--espacio-s);
+  color: var(--color-superficie);
+  background-color: var(--color-marino);
+}
+
+.saltar:focus {
+  left: var(--espacio-s);
+  top: var(--espacio-s);
+  z-index: 20;
+}
+
+/* ---------- 5. Barra superior y cabecera (Flexbox) ---------- */
+.barra-superior {
+  margin: 0;
+  padding: 0.4rem var(--espacio-s);
+  font-size: 0.8rem;
+  text-align: center;
+  color: #e9e3d9;
+  background-color: var(--color-marino);
+}
+
+.barra-superior a {
+  color: var(--color-dorado);
+}
+
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-xs) var(--espacio-m);
+  padding: var(--espacio-s);
+  background-color: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.logo {
+  margin: 0;
+  line-height: 1;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: var(--color-marino);
+}
+
+.logo img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.logo-lema {
+  margin-top: 0.3rem;
+  white-space: nowrap;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-texto-suave);
+}
+
+body > header nav {
+  width: 100%;
+  overflow-x: auto;
+}
+
+body > header ul {
+  display: flex;
+  gap: var(--espacio-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+body > header nav a {
+  display: inline-block;
+  padding: var(--espacio-xs) 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transicion), color var(--transicion);
+}
+
+body > header nav a:hover,
+body > header nav a[aria-current="page"] {
+  color: var(--color-cuero);
+  border-bottom-color: var(--color-cuero);
+}
+
+.cabecera-acciones {
+  display: none;               /* en móvil el botón va en el menú */
+}
+
+/* ---------- 6. Contenedores ---------- */
+main {
+  display: block;
+}
+
+.contenedor {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 var(--espacio-s);
+}
+
+.estrecho {
+  max-width: 46rem;
+}
+
+.bloque {
+  padding: var(--espacio-l) 0;
+}
+
+.bloque-crema {
+  background-color: var(--color-crema);
+}
+
+.bloque-oscuro {
+  color: #ddd6cb;
+  background-color: var(--color-marino);
+}
+
+.bloque-oscuro h2,
+.bloque-oscuro h3 {
+  color: var(--color-superficie);
+}
+
+.bloque-oscuro .antetitulo {
+  color: var(--color-dorado);
+}
+
+.cabecera-bloque {
+  margin-bottom: var(--espacio-l);
+}
+
+/* Cabecera de las páginas interiores */
+.cabecera-pagina {
+  padding: var(--espacio-l) 0 var(--espacio-m);
+  background-color: var(--color-crema);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+/* ---------- 7. Botones ---------- */
+.boton {
+  display: inline-block;
+  padding: 0.95rem 1.8rem;
+  font-family: var(--fuente);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-superficie);
+  background-color: var(--color-marino);
+  border: 1px solid var(--color-marino);
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: background-color var(--transicion), border-color var(--transicion), color var(--transicion);
+}
+
+.boton:hover {
+  background-color: var(--color-cuero);
+  border-color: var(--color-cuero);
+}
+
+.boton-cuero {
+  background-color: var(--color-cuero);
+  border-color: var(--color-cuero);
+}
+
+.boton-cuero:hover {
+  background-color: var(--color-cuero-oscuro);
+  border-color: var(--color-cuero-oscuro);
+}
+
+.boton-secundario {
+  color: var(--color-marino);
+  background-color: transparent;
+}
+
+.boton-secundario:hover {
+  color: var(--color-superficie);
+}
+
+.bloque-oscuro .boton-secundario,
+.hero .boton-secundario {
+  color: var(--color-superficie);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.bloque-oscuro .boton-secundario:hover,
+.hero .boton-secundario:hover {
+  color: var(--color-marino);
+  background-color: var(--color-superficie);
+  border-color: var(--color-superficie);
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin: var(--espacio-m) 0 0;
+}
+
+.enlace-flecha {
+  font-weight: 600;
+  color: var(--color-cuero);
+  text-decoration: none;
+}
+
+.enlace-flecha::after {
+  content: " →";
+}
+
+.enlace-flecha:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 8. Portada (hero) ---------- */
+.hero {
+  position: relative;
+  color: #ece6dc;
+  background-color: var(--color-marino);
+  overflow: hidden;
+}
+
+.hero-interior {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+  padding-top: var(--espacio-l);
+  padding-bottom: var(--espacio-l);
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  color: var(--color-superficie);
+}
+
+.hero .antetitulo {
+  color: var(--color-dorado);
+}
+
+.hero-texto p {
+  max-width: 34rem;
+  font-size: 1.125rem;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: var(--radio);
+}
+
+/* ---------- 9. Franja de datos de confianza ---------- */
+.datos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-m);
+  margin: 0;
+  padding: var(--espacio-m) 0;
+  list-style: none;
+}
+
+.datos li {
+  padding-left: var(--espacio-s);
+  border-left: 2px solid var(--color-cuero);
+}
+
+.datos strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-marino);
+}
+
+.datos span {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 10. Rejillas (CSS Grid) ---------- */
+.rejilla-2,
+.rejilla-3,
+.rejilla-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-m);
+}
+
+.rejilla-productos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-m) var(--espacio-s);
+}
+
+/* ---------- 11. Tarjetas de marca ---------- */
+.marca {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+  transition: box-shadow var(--transicion), transform var(--transicion);
+}
+
+.marca:hover {
+  box-shadow: var(--sombra);
+  transform: translateY(-2px);
+}
+
+.marca img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.marca-cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--espacio-m);
+}
+
+.marca-cuerpo p {
+  color: var(--color-texto-suave);
+}
+
+.marca-cuerpo .enlace-flecha {
+  margin-top: auto;
+}
+
+/* Logotipos de texto de cada marca (sustituir por los logos reales) */
+.logo-marca {
+  margin-bottom: var(--espacio-xs);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-marino);
+}
+
+.logo-jaslen {
+  font-family: var(--fuente-titulos);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.logo-itaca {
+  font-family: var(--fuente);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: lowercase;
+}
+
+.logo-skpat {
+  font-family: var(--fuente);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.etiqueta {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: var(--espacio-s);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cuero-oscuro);
+  background-color: var(--color-crema);
+  border-radius: 99px;
+}
+
+/* ---------- 12. Tarjeta de producto ---------- */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta img {
+  width: 100%;
+  margin-bottom: var(--espacio-s);
+  background-color: var(--color-crema);
+  border-radius: var(--radio);
+  transition: opacity var(--transicion);
+}
+
+.tarjeta:hover img {
+  opacity: 0.88;
+}
+
+.tarjeta h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.tarjeta h3 a {
+  text-decoration: none;
+}
+
+.tarjeta h3 a:hover {
+  text-decoration: underline;
+}
+
+.tarjeta p {
+  margin-bottom: 0.2rem;
+}
+
+.meta {
+  font-size: 0.88rem;
+  color: var(--color-texto-suave);
+}
+
+.marca-producto {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-cuero);
+}
+
+/* ---------- 13. Ventajas (lista con número) ---------- */
+.ventajas {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ventaja;
+}
+
+.ventajas li {
+  counter-increment: ventaja;
+  padding: var(--espacio-m) 0;
+  border-top: 1px solid var(--color-linea);
+}
+
+.bloque-oscuro .ventajas li {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.ventajas li::before {
+  content: "0" counter(ventaja);
+  display: block;
+  margin-bottom: var(--espacio-xs);
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  color: var(--color-cuero);
+}
+
+.bloque-oscuro .ventajas li::before {
+  color: var(--color-dorado);
+}
+
+.ventajas h3 {
+  margin-bottom: var(--espacio-xs);
+}
+
+.ventajas p {
+  margin: 0;
+}
+
+/* ---------- 14. Pasos del proceso ---------- */
+.pasos {
+  display: grid;
+  gap: var(--espacio-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding: var(--espacio-m);
+  padding-top: 3.4rem;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+}
+
+.pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  top: var(--espacio-m);
+  left: var(--espacio-m);
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-weight: 600;
+  color: var(--color-superficie);
+  background-color: var(--color-cuero);
+  border-radius: 50%;
+}
+
+.pasos p {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 15. Bloque con imagen y texto ---------- */
+.dos-columnas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+.dos-columnas img {
+  width: 100%;
+  border-radius: var(--radio);
+}
+
+.cita {
+  margin: var(--espacio-m) 0;
+  padding-left: var(--espacio-m);
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-marino);
+  border-left: 3px solid var(--color-cuero);
+}
+
+.cita p {
+  margin: 0;
+}
+
+/* ---------- 16. Llamada a la acción final ---------- */
+.llamada {
+  text-align: center;
+}
+
+.llamada p {
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.llamada .botones {
+  justify-content: center;
+}
+
+/* ---------- 17. Catálogo: filtro por marca ---------- */
+.filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: var(--espacio-m) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filtro a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-radius: 99px;
+  transition: border-color var(--transicion), color var(--transicion);
+}
+
+.filtro a:hover {
+  color: var(--color-cuero);
+  border-color: var(--color-cuero);
+}
+
+.seccion-marca {
+  padding: var(--espacio-l) 0;
+  border-bottom: 1px solid var(--color-linea);
+  scroll-margin-top: 7rem;      /* para que la cabecera fija no tape el título */
+}
+
+.seccion-marca:last-of-type {
+  border-bottom: 0;
+}
+
+.seccion-marca > header {
+  margin-bottom: var(--espacio-m);
+}
+
+/* ---------- 18. Ficha de producto ---------- */
+.migas ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: 0 0 var(--espacio-m);
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.migas li + li::before {
+  content: "/";
+  margin-right: var(--espacio-xs);
+}
+
+.ficha {
+  padding: var(--espacio-m) 0 var(--espacio-l);
+}
+
+.ficha figure {
+  margin: 0 0 var(--espacio-m);
+}
+
+.ficha figure img {
+  width: 100%;
+  background-color: var(--color-crema);
+  border-radius: var(--radio);
+}
+
+.ficha figcaption {
+  margin-top: var(--espacio-xs);
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.ficha > section {
+  margin-bottom: var(--espacio-l);
+}
+
+.colores {
+  display: flex;
+  gap: var(--espacio-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.colores li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.colores li::before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  background-color: var(--muestra);
+}
+
+.lista-check {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-check li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.8rem;
+}
+
+.lista-check li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.85rem;
+  width: 0.7rem;
+  height: 0.35rem;
+  border-left: 2px solid var(--color-cuero);
+  border-bottom: 2px solid var(--color-cuero);
+  transform: rotate(-45deg);
+}
+
+.caja-b2b {
+  padding: var(--espacio-m);
+  background-color: var(--color-crema);
+  border-left: 3px solid var(--color-cuero);
+}
+
+.caja-b2b p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 19. Tablas ---------- */
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: var(--color-superficie);
+}
+
+caption {
+  margin-bottom: var(--espacio-xs);
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+th,
+td {
+  padding: 0.7rem var(--espacio-s);
+  text-align: left;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+thead th {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-superficie);
+  background-color: var(--color-marino);
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #faf8f4;
+}
+
+/* ---------- 20. Preguntas frecuentes (details/summary) ---------- */
+.faq details {
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  padding: var(--espacio-s) 0;
+  font-weight: 600;
+  color: var(--color-marino);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--color-cuero);
+}
+
+.faq details[open] summary::after {
+  content: "–";
+}
+
+.faq details p {
+  padding-bottom: var(--espacio-s);
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 21. Formularios ---------- */
+.formulario {
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+fieldset {
+  margin: 0 0 var(--espacio-m);
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  margin-bottom: var(--espacio-s);
+  padding: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-cuero);
+}
+
+.campos {
+  display: grid;
+  gap: 0 var(--espacio-s);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-texto);
+  background-color: var(--color-superficie);
+  border: 1px solid #8f8a82;
+  border-radius: var(--radio);
+  transition: border-color var(--transicion);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--color-marino);
+}
+
+.casilla {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-xs);
+  font-size: 0.9rem;
+}
+
+.casilla input {
+  margin-top: 0.3rem;
+}
+
+.casilla label {
+  margin: 0;
+  font-weight: 400;
+}
+
+.nota {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+address {
+  font-style: normal;
+}
+
+.datos-contacto {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.datos-contacto li {
+  padding: var(--espacio-s) 0;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.datos-contacto strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cuero);
+}
+
+.datos-contacto a {
+  text-decoration: none;
+}
+
+.datos-contacto a:hover {
+  text-decoration: underline;
+}
+
+.mapa {
+  width: 100%;
+  margin-top: var(--espacio-m);
+  border-radius: var(--radio);
+}
+
+/* ---------- 22. Textos legales ---------- */
+.legal h2 {
+  margin-top: var(--espacio-l);
+  scroll-margin-top: 7rem;
+}
+
+.aviso-plantilla {
+  padding: var(--espacio-s) var(--espacio-m);
+  font-size: 0.9rem;
+  background-color: #fff6e5;
+  border-left: 3px solid var(--color-dorado);
+}
+
+/* ---------- 23. Pie de página ---------- */
+body > footer {
+  padding: var(--espacio-l) 0 var(--espacio-m);
+  font-size: 0.92rem;
+  color: #cfc7bb;
+  background-color: var(--color-marino);
+}
+
+.pie-rejilla {
+  display: grid;
+  gap: var(--espacio-l);
+}
+
+body > footer .logo-nombre {
+  color: var(--color-superficie);
+}
+
+body > footer h2 {
+  margin-bottom: var(--espacio-s);
+  font-family: var(--fuente);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+}
+
+body > footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body > footer li {
+  padding: 0.2rem 0;
+}
+
+body > footer a {
+  text-decoration: none;
+}
+
+body > footer a:hover {
+  color: var(--color-superficie);
+  text-decoration: underline;
+}
+
+.pie-final {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-l);
+  padding-top: var(--espacio-m);
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pie-final p {
+  margin: 0;
+}
+
+/* ==========================================================
+   NUEVOS COMPONENTES (Grupo Arsamar + Arsamar Member)
+   ========================================================== */
+
+/* ---------- 23b. Herramientas de la cabecera: buscador y acceso ---------- */
+.herramientas {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  margin: 0;
+}
+
+.buscador {
+  display: none;               /* en móvil se oculta para ganar espacio */
+  position: relative;
+}
+
+.buscador label {
+  position: absolute;
+  left: -999rem;               /* etiqueta solo para lectores de pantalla */
+}
+
+.buscador input {
+  width: 13rem;
+  padding: 0.55rem 2.6rem 0.55rem 1rem;
+  font-size: 0.9rem;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-linea);
+  border-radius: 99px;
+}
+
+.buscador button {
+  position: absolute;
+  right: 0.3rem;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--color-marino);
+  background: none;
+  border: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.icono {
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-marino);
+}
+
+.icono svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.icono:hover {
+  color: var(--color-cuero);
+}
+
+.icono span {
+  display: none;
+}
+
+/* Enlace "Member" del menú, en dorado para que destaque */
+body > header nav a.enlace-member {
+  color: #8f6b2e;
+}
+
+body > header nav a.enlace-member::before {
+  content: "◆ ";
+  font-size: 0.6rem;
+  vertical-align: 0.15em;
+}
+
+/* ---------- 23c. Portada a pantalla completa ---------- */
+.portada {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 82vh;
+  color: var(--color-superficie);
+  background-color: var(--color-marino);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.portada > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 50%;
+  animation: acercar 14s ease-out both;
+}
+
+/* Velo degradado para que el texto siempre se lea */
+.portada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, hsla(30, 6%, 14%, 0.88) 0%, hsla(30, 6%, 14%, 0.55) 45%, hsla(30, 6%, 14%, 0.05) 80%),
+              linear-gradient(0deg, hsla(30, 6%, 14%, 0.6) 0%, transparent 50%);
+}
+
+.portada-texto {
+  width: 100%;
+  padding-top: var(--espacio-xl);
+  padding-bottom: var(--espacio-l);
+}
+
+.portada-texto > * {
+  max-width: 38rem;
+}
+
+.portada h1 {
+  font-size: 2.5rem;
+  color: var(--color-superficie);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.portada .antetitulo {
+  color: var(--color-dorado);
+}
+
+.portada p {
+  font-size: 1.125rem;
+  color: #ece6dc;
+}
+
+.portada .boton-secundario {
+  color: var(--color-superficie);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.portada .boton-secundario:hover {
+  color: var(--color-marino);
+  background-color: var(--color-superficie);
+  border-color: var(--color-superficie);
+}
+
+@keyframes acercar {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ---------- 23d. Estructura del grupo ---------- */
+.grupo-mapa {
+  display: grid;
+  gap: var(--espacio-m);
+}
+
+.empresa-grupo {
+  position: relative;
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-top: 3px solid var(--color-cuero);
+  border-radius: var(--radio);
+}
+
+.empresa-grupo .meta {
+  margin-bottom: var(--espacio-xs);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.empresa-grupo ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-texto-suave);
+}
+
+.matriz {
+  padding: var(--espacio-m);
+  text-align: center;
+  color: var(--color-marfil);
+  background-color: var(--color-marino);
+  border-radius: var(--radio);
+}
+
+.matriz h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-superficie);
+}
+
+.matriz p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-dorado);
+}
+
+/* ---------- 23e. Tema Arsamar Member (negro y oro) ---------- */
+.tema-member {
+  color: #cfc8bb;
+  background-color: var(--color-negro);
+  background-image: radial-gradient(circle at 80% 0%, hsla(38, 45%, 60%, 0.12), transparent 45%);
+}
+
+.tema-member h1,
+.tema-member h2,
+.tema-member h3 {
+  color: var(--color-marfil);
+}
+
+.tema-member .antetitulo {
+  color: var(--color-dorado);
+}
+
+.tema-member .intro {
+  color: #b8b1a4;
+}
+
+.tema-member a:not(.boton) {
+  color: var(--color-dorado);
+}
+
+.boton-oro {
+  color: var(--color-negro);
+  background-color: var(--color-dorado);
+  border-color: var(--color-dorado);
+}
+
+.boton-oro:hover {
+  color: var(--color-negro);
+  background-color: #dcbd88;
+  border-color: #dcbd88;
+}
+
+.tema-member .boton-secundario {
+  color: var(--color-marfil);
+  border-color: hsla(38, 45%, 60%, 0.6);
+}
+
+.tema-member .boton-secundario:hover {
+  color: var(--color-negro);
+  background-color: var(--color-marfil);
+  border-color: var(--color-marfil);
+}
+
+/* Sello dorado "Member" */
+.sello-member {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8f6b2e;
+  background-color: #f6eedd;
+  border: 1px solid var(--color-dorado);
+  border-radius: 99px;
+}
+
+.tema-member .sello-member {
+  color: var(--color-dorado);
+  background-color: transparent;
+}
+
+.sello-member::before {
+  content: "◆";
+  font-size: 0.55rem;
+}
+
+.portada-member::before {
+  background: linear-gradient(90deg, hsla(30, 8%, 12%, 0.92) 0%, hsla(30, 8%, 12%, 0.6) 45%, hsla(30, 8%, 12%, 0.1) 80%),
+              linear-gradient(0deg, hsla(30, 8%, 12%, 0.7) 0%, transparent 50%);
+}
+
+.portada-member {
+  background-color: var(--color-negro);
+}
+
+/* Beneficios del programa */
+.beneficios {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: hsla(38, 45%, 60%, 0.25);   /* las líneas entre celdas */
+  border: 1px solid hsla(38, 45%, 60%, 0.25);
+}
+
+.beneficios li {
+  padding: var(--espacio-m);
+  background-color: var(--color-negro);
+  transition: background-color var(--transicion);
+}
+
+.beneficios li:hover {
+  background-color: var(--color-negro-2);
+}
+
+.beneficios .numero {
+  display: block;
+  margin-bottom: var(--espacio-s);
+  font-family: var(--fuente-titulos);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-dorado);
+}
+
+.beneficios p {
+  margin: 0;
+}
+
+/* Bloque destacado Member en la portada */
+.banda-member .dos-columnas img {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.lista-oro {
+  margin: var(--espacio-m) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-oro li {
+  padding: 0.5rem 0 0.5rem 1.6rem;
+  border-bottom: 1px solid hsla(38, 45%, 60%, 0.18);
+  position: relative;
+}
+
+.lista-oro li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  font-size: 0.65rem;
+  color: var(--color-dorado);
+}
+
+/* Niveles del programa */
+.niveles {
+  display: grid;
+  gap: var(--espacio-m);
+}
+
+.nivel {
+  padding: var(--espacio-l) var(--espacio-m);
+  border: 1px solid hsla(38, 45%, 60%, 0.35);
+  border-radius: var(--radio);
+}
+
+.nivel-destacado {
+  background: linear-gradient(160deg, #2a241a, var(--color-negro) 60%);
+  border-color: var(--color-dorado);
+}
+
+.nivel h3 {
+  font-size: 1.5rem;
+}
+
+/* Tarjeta de producto exclusivo o anticipado */
+.tarjeta-exclusiva {
+  position: relative;
+}
+
+.tarjeta-exclusiva .sello-member {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+}
+
+.tarjeta-exclusiva .candado {
+  position: absolute;
+  inset: 0 0 auto;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-marfil);
+  background-color: hsla(30, 8%, 12%, 0.55);
+  backdrop-filter: blur(3px);
+  border-radius: var(--radio);
+}
+
+.tema-member .tarjeta img {
+  background-color: #1f2228;
+}
+
+.tema-member .meta {
+  color: #a8a194;
+}
+
+.tema-member .marca-producto {
+  color: var(--color-dorado);
+}
+
+/* ---------- 23f. Acceso Member (inicio de sesión) ---------- */
+.acceso {
+  display: grid;
+  gap: var(--espacio-l);
+}
+
+.acceso .formulario {
+  color: var(--color-texto);
+}
+
+.acceso .formulario h2 {
+  color: var(--color-marino);
+}
+
+.nota-demo {
+  padding: var(--espacio-s);
+  font-size: 0.88rem;
+  color: #6d5323;
+  background-color: #fbf3e2;
+  border: 1px dashed var(--color-dorado);
+  border-radius: var(--radio);
+}
+
+/* ---------- 23g. Área privada Member (panel) ---------- */
+.panel-cabecera {
+  padding: var(--espacio-l) 0 var(--espacio-m);
+}
+
+.panel-cabecera .contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.panel-cabecera .tarjeta-socio {
+  width: 100%;
+  max-width: 22rem;
+  border-radius: 14px;
+}
+
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: var(--espacio-m) 0 0;
+  padding: 0;
+  list-style: none;
+  background-color: hsla(38, 45%, 60%, 0.25);
+  border: 1px solid hsla(38, 45%, 60%, 0.25);
+}
+
+.resumen li {
+  padding: var(--espacio-s);
+  background-color: var(--color-negro);
+}
+
+.resumen strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-marfil);
+}
+
+.resumen span {
+  font-size: 0.82rem;
+}
+
+.panel-menu {
+  position: sticky;
+  top: 4.6rem;
+  z-index: 4;
+  background-color: var(--color-superficie);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.panel-menu ul {
+  display: flex;
+  gap: var(--espacio-m);
+  margin: 0;
+  padding: 0 var(--espacio-s);
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+}
+
+.panel-menu a {
+  display: inline-block;
+  padding: var(--espacio-s) 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.panel-menu a:hover {
+  color: var(--color-cuero);
+  border-bottom-color: var(--color-cuero);
+}
+
+.panel-seccion {
+  scroll-margin-top: 9rem;
+}
+
+.cuenta-atras {
+  display: inline-block;
+  margin-bottom: var(--espacio-xs);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-superficie);
+  background-color: var(--color-cuero);
+  border-radius: 99px;
+}
+
+.reserva {
+  display: flex;
+  gap: var(--espacio-xs);
+  align-items: flex-end;
+  margin-top: var(--espacio-xs);
+}
+
+.reserva p {
+  margin: 0;
+}
+
+.reserva label {
+  font-size: 0.8rem;
+}
+
+.reserva input {
+  width: 4.5rem;
+  padding: 0.5rem;
+}
+
+.reserva .boton {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.72rem;
+}
+
+.documentos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.documentos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-s);
+  padding: var(--espacio-s) 0;
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.documentos .meta {
+  display: block;
+}
+
+.gestor {
+  display: flex;
+  gap: var(--espacio-m);
+  align-items: center;
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-left: 3px solid var(--color-dorado);
+}
+
+.gestor .avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  color: var(--color-dorado);
+  background-color: var(--color-negro);
+  border-radius: 50%;
+}
+
+.gestor p {
+  margin: 0;
+}
+
+/* ---------- 23h. Filtro del catálogo (sin JavaScript, con :has) ---------- */
+.filtros {
+  margin-top: var(--espacio-m);
+}
+
+.filtros fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: 0;
+}
+
+.filtros legend {
+  margin-bottom: var(--espacio-xs);
+}
+
+.filtros input {
+  position: absolute;
+  opacity: 0;
+}
+
+.filtros label {
+  margin: 0;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.88rem;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+  border-radius: 99px;
+  cursor: pointer;
+  transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
+}
+
+.filtros label:hover {
+  border-color: var(--color-marino);
+}
+
+.filtros input:checked + label {
+  color: var(--color-superficie);
+  background-color: var(--color-marino);
+  border-color: var(--color-marino);
+}
+
+.filtros input:focus-visible + label {
+  outline: 2px solid var(--color-cuero);
+  outline-offset: 3px;
+}
+
+/* Si está marcada una marca, se ocultan las secciones de las otras */
+main:has(#f-jaslen:checked) .seccion-marca:not(#jaslen),
+main:has(#f-itaca:checked) .seccion-marca:not(#itaca),
+main:has(#f-skpat:checked) .seccion-marca:not(#skpat),
+main:has(#f-member:checked) .seccion-marca:not(#exclusivos) {
+  display: none;
+}
+
+/* ---------- 23i. Galería de la ficha (sin JavaScript) ---------- */
+.galeria input {
+  position: absolute;
+  opacity: 0;
+}
+
+.galeria-principal img {
+  display: none;
+  width: 100%;
+  background-color: var(--color-crema);
+  border-radius: var(--radio);
+}
+
+#foto1:checked ~ .galeria-principal img:nth-child(1),
+#foto2:checked ~ .galeria-principal img:nth-child(2),
+#foto3:checked ~ .galeria-principal img:nth-child(3),
+#foto4:checked ~ .galeria-principal img:nth-child(4) {
+  display: block;
+}
+
+.galeria-miniaturas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-xs);
+}
+
+.galeria-miniaturas label {
+  margin: 0;
+  cursor: pointer;
+  opacity: 0.55;
+  border-bottom: 2px solid transparent;
+  transition: opacity var(--transicion);
+}
+
+.galeria-miniaturas img {
+  border-radius: var(--radio);
+}
+
+.galeria-miniaturas label:hover,
+#foto1:checked ~ .galeria-miniaturas label:nth-child(1),
+#foto2:checked ~ .galeria-miniaturas label:nth-child(2),
+#foto3:checked ~ .galeria-miniaturas label:nth-child(3),
+#foto4:checked ~ .galeria-miniaturas label:nth-child(4) {
+  opacity: 1;
+  border-bottom-color: var(--color-cuero);
+}
+
+.galeria input:focus-visible ~ .galeria-miniaturas {
+  outline: 2px solid var(--color-cuero);
+  outline-offset: 3px;
+}
+
+/* Muestras de color seleccionables */
+.selector-color {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.selector-color input {
+  position: absolute;
+  opacity: 0;
+}
+
+.selector-color label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.selector-color label::before {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  background-color: var(--muestra);
+}
+
+.selector-color input:checked + label::before {
+  outline: 2px solid var(--color-marino);
+  outline-offset: 3px;
+}
+
+.selector-color input:focus-visible + label {
+  outline: 2px solid var(--color-cuero);
+  outline-offset: 3px;
+}
+
+/* ---------- 23j. Cita de cliente ---------- */
+.testimonio {
+  margin: 0;
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-linea);
+}
+
+.testimonio blockquote {
+  margin: 0 0 var(--espacio-s);
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-marino);
+}
+
+.testimonio figcaption {
+  font-size: 0.88rem;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 23k. Ajustes del tema Member en tablet y escritorio ---------- */
+@media (min-width: 600px) {
+  .portada h1 {
+    font-size: 3.2rem;
+  }
+
+  .beneficios,
+  .grupo-mapa {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resumen {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .niveles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icono span {
+    display: inline;
+  }
+}
+
+@media (min-width: 960px) {
+  .portada h1 {
+    font-size: 4rem;
+  }
+
+  .portada-texto {
+    padding-bottom: var(--espacio-xl);
+  }
+
+  .beneficios {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grupo-mapa {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grupo-mapa .matriz {
+    grid-column: 1 / -1;
+  }
+
+  .acceso {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .panel-cabecera .contenedor {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .panel-cabecera .contenedor > div {
+    flex: 1;
+  }
+
+  .panel-menu ul {
+    justify-content: center;
+  }
+
+  .panel-menu {
+    top: 4.9rem;
+  }
+}
+
+/* El buscador solo cabe en pantallas anchas */
+@media (min-width: 1320px) {
+  .buscador {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portada > img {
+    animation: none;
+  }
+}
+
+/* ==========================================================
+   24. Tableta (a partir de 600 px)
+   ========================================================== */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero h1 {
+    font-size: 2.9rem;
+  }
+
+  .contenedor,
+  body > header {
+    padding-left: var(--espacio-m);
+    padding-right: var(--espacio-m);
+  }
+
+  .bloque {
+    padding: var(--espacio-xl) 0;
+  }
+
+  .datos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .rejilla-2,
+  .rejilla-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rejilla-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rejilla-productos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-l) var(--espacio-m);
+  }
+
+  .pasos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campos .ancho-completo {
+    grid-column: 1 / -1;
+  }
+
+  .formulario {
+    padding: var(--espacio-l);
+  }
+
+  .pie-rejilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pie-final {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================
+   25. Escritorio (a partir de 960 px)
+   ========================================================== */
+@media (min-width: 960px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 3.4rem;
+  }
+
+  /* Cabecera en una sola fila: logo · menú · botón */
+  body > header {
+    flex-wrap: nowrap;
+    padding-top: var(--espacio-s);
+    padding-bottom: var(--espacio-s);
+  }
+
+  body > header nav {
+    width: auto;
+    overflow: visible;
+  }
+
+  .cabecera-acciones {
+    display: block;
+  }
+
+  .cabecera-acciones .boton {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .solo-movil {
+    display: none;
+  }
+
+  .hero-interior {
+    flex-direction: row;
+    align-items: center;
+    padding-top: var(--espacio-xl);
+    padding-bottom: var(--espacio-xl);
+  }
+
+  .hero-texto {
+    flex: 1.05;
+  }
+
+  .hero img {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rejilla-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rejilla-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .rejilla-productos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ventajas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--espacio-l);
+  }
+
+  .dos-columnas {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .dos-columnas > * {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .dos-columnas.invertido {
+    flex-direction: row-reverse;
+  }
+
+  .dos-columnas.arriba {
+    align-items: flex-start;
+  }
+
+  /* Ficha en dos columnas: foto a la izquierda, datos a la derecha */
+  .ficha {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    column-gap: var(--espacio-xl);
+    align-items: start;
+  }
+
+  .ficha > * {
+    grid-column: 2;
+  }
+
+  .ficha > figure {
+    grid-column: 1;
+    grid-row: 1 / span 8;
+    position: sticky;
+    top: 7rem;
+  }
+
+  .pie-rejilla {
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  }
+}
+
+/* ---------- 26. Respeta a quien prefiere menos movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* ---------- 27. Orden de la cabecera ---------- */
+/* Móvil: logo y herramientas arriba, menú debajo a todo el ancho */
+body > header nav {
+  order: 3;
+}
+
+@media (min-width: 960px) {
+  body > header nav {
+    order: 0;
+  }
+}
+
+/* Portátiles pequeños (960-1199 px): cabecera más compacta */
+@media (min-width: 960px) and (max-width: 1199px) {
+  body > header ul {
+    gap: var(--espacio-s);
+  }
+
+  body > header nav a {
+    font-size: 0.78rem;
+  }
+
+  .icono span,
+  .logo-lema {
+    display: none;
+  }
+}
+
+/* ---------- 28. Componentes comunes dentro del tema Member ---------- */
+.tema-member .pasos li {
+  background-color: var(--color-negro-2);
+  border-color: hsla(38, 45%, 60%, 0.3);
+}
+
+.tema-member .pasos li::before {
+  color: var(--color-negro);
+  background-color: var(--color-dorado);
+}
+
+.tema-member .pasos p {
+  color: #b8b1a4;
+}
+
+.tema-member .faq details,
+.tema-member .faq summary {
+  border-color: hsla(38, 45%, 60%, 0.25);
+}
+
+.tema-member .faq summary {
+  color: var(--color-marfil);
+}
+
+.tema-member .faq details p {
+  color: #b8b1a4;
+}
+
+.cuenta-atras {
+  align-self: flex-start;
+}
+
+/* Antetítulos y sellos de la portada: tamaño propio (no heredan el de los párrafos) */
+.portada .antetitulo,
+.portada .sello-member {
+  font-size: 0.78rem;
+}
+
+/* ==========================================================
+   29. CAPA DE CALMA
+   Ajustes que dan a la web su carácter tranquilo: tipografía
+   ligera, más aire, menos líneas y movimientos lentos.
+   ========================================================== */
+
+/* Títulos ligeros y amplios, sin peso visual */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.antetitulo {
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--color-texto-suave);
+}
+
+.intro {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Barra superior discreta */
+.barra-superior {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--color-texto-suave);
+  background-color: var(--color-crema);
+}
+
+.barra-superior a {
+  color: var(--color-texto);
+}
+
+/* Cabecera ligera, casi transparente */
+body > header {
+  background-color: hsla(40, 33%, 97%, 0.86);
+  backdrop-filter: blur(12px);
+  border-bottom-color: transparent;
+}
+
+body > header nav a {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.logo-nombre {
+  font-weight: 300;
+  letter-spacing: 0.42em;
+}
+
+/* Botones redondeados y tranquilos */
+.boton {
+  padding: 0.95rem 2rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  border-radius: 99px;
+}
+
+.boton:hover {
+  transform: translateY(-1px);
+}
+
+/* Bloques con más aire */
+.bloque {
+  padding: var(--espacio-xl) 0;
+}
+
+.cabecera-pagina {
+  padding: var(--espacio-xl) 0 var(--espacio-l);
+  background-color: transparent;
+  border-bottom: 0;
+}
+
+.cabecera-pagina h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+}
+
+.cabecera-bloque {
+  max-width: 44rem;
+}
+
+/* Tarjetas sin bordes: la imagen respira sola */
+.marca,
+.marca:hover {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+.marca img,
+.tarjeta img,
+.dos-columnas img {
+  border-radius: var(--radio);
+}
+
+.marca-cuerpo {
+  padding: var(--espacio-m) 0 0;
+}
+
+.tarjeta img {
+  margin-bottom: var(--espacio-s);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity var(--transicion);
+}
+
+.tarjeta:hover img {
+  opacity: 1;
+  transform: scale(1.015);
+}
+
+.tarjeta h3 {
+  font-weight: 400;
+}
+
+.etiqueta {
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid var(--color-linea);
+}
+
+.cita {
+  font-family: var(--fuente);
+  font-weight: 300;
+  font-style: normal;
+  border-left-width: 1px;
+}
+
+.ventajas li,
+.datos-contacto li,
+.documentos li,
+.faq details {
+  border-color: var(--color-linea);
+}
+
+.pasos li {
+  border: 0;
+  box-shadow: var(--sombra);
+}
+
+.formulario {
+  border: 0;
+}
+
+thead th {
+  font-weight: 500;
+  color: var(--color-texto);
+  background-color: var(--color-crema);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  border-color: #cfc8bd;
+  border-radius: 6px;
+}
+
+/* ---------- 29b. Portada en calma: una frase y una maleta que flota ---------- */
+.portada-calma {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 72% 40%, #ffffff 0%, var(--color-fondo) 45%, var(--color-crema) 100%);
+}
+
+.portada-calma .contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+  padding-top: var(--espacio-l);
+  padding-bottom: var(--espacio-l);
+}
+
+.portada-calma h1 {
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.portada-calma p.intro {
+  max-width: 30rem;
+}
+
+.portada-calma .aparecer {
+  animation: aparecer 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.portada-calma .aparecer:nth-child(2) { animation-delay: 0.15s; }
+.portada-calma .aparecer:nth-child(3) { animation-delay: 0.3s; }
+.portada-calma .aparecer:nth-child(4) { animation-delay: 0.45s; }
+
+/* Escena: la maleta flota y su sombra «respira» al mismo ritmo */
+.escena {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 22rem;
+}
+
+.escena img {
+  position: relative;
+  z-index: 1;
+  width: min(80%, 26rem);
+  animation: flotar 7s ease-in-out infinite;
+}
+
+.escena img + img {
+  position: absolute;
+  right: 0;
+  bottom: 12%;
+  width: min(42%, 15rem);
+  animation-duration: 9s;
+  animation-delay: -3s;
+}
+
+.escena::after {
+  content: "";
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  width: 55%;
+  height: 1.6rem;
+  background: radial-gradient(closest-side, hsla(30, 30%, 15%, 0.28), transparent);
+  transform: translateX(-50%);
+  animation: respirar 7s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes respirar {
+  0%, 100% { transform: translateX(-50%) scaleX(1); opacity: 1; }
+  50% { transform: translateX(-50%) scaleX(0.86); opacity: 0.7; }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 29c. Frase central («qué hacemos» en una línea) ---------- */
+.frase {
+  text-align: center;
+}
+
+.frase h2 {
+  max-width: 50rem;
+  margin: 0 auto var(--espacio-l);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.25;
+}
+
+.frase h2 span {
+  color: var(--color-texto-suave);
+}
+
+.hechos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espacio-s) var(--espacio-l);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.hechos li::before {
+  content: "";
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.6rem;
+  vertical-align: 0.15em;
+  border-radius: 50%;
+  background-color: var(--color-dorado);
+}
+
+/* ---------- 29d. Categorías: tres imágenes altas ---------- */
+.categorias {
+  display: grid;
+  gap: var(--espacio-m);
+}
+
+.categoria {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radio);
+  text-decoration: none;
+}
+
+.categoria img {
+  width: 100%;
+  aspect-ratio: 9 / 11;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.categoria:hover img {
+  transform: scale(1.03);
+}
+
+.categoria span {
+  position: absolute;
+  left: var(--espacio-m);
+  bottom: var(--espacio-m);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  background-color: hsla(40, 33%, 98%, 0.88);
+  backdrop-filter: blur(6px);
+  border-radius: 99px;
+}
+
+/* ---------- 29e. Marcas en texto (sin ruido) ---------- */
+.marcas-texto {
+  display: grid;
+  gap: var(--espacio-l);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marcas-texto li {
+  padding-top: var(--espacio-m);
+  border-top: 1px solid var(--color-linea);
+}
+
+.marcas-texto .logo-marca {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.marcas-texto p {
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 29f. Manifiesto ---------- */
+.manifiesto {
+  background-color: var(--color-crema);
+}
+
+.manifiesto p.grande {
+  max-width: 46rem;
+  margin: 0 0 var(--espacio-m);
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.manifiesto p.grande span {
+  display: block;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 29g. Member en calma ---------- */
+.tema-member {
+  background-image: radial-gradient(circle at 80% 0%, hsla(36, 40%, 62%, 0.10), transparent 50%);
+}
+
+.sello-member {
+  font-weight: 500;
+}
+
+.beneficios li {
+  padding: var(--espacio-l) var(--espacio-m);
+}
+
+.beneficios .numero {
+  font-weight: 300;
+}
+
+/* ---------- 29h. Aparición suave al hacer scroll (sin JavaScript) ---------- */
+@supports (animation-timeline: view()) {
+  .revelar {
+    animation: aparecer linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+}
+
+/* ---------- 29i. Tamaños de tableta y escritorio ---------- */
+@media (min-width: 600px) {
+  .categorias {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .marcas-texto {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .portada-calma .contenedor {
+    flex-direction: row;
+    align-items: center;
+    min-height: calc(100vh - 7rem);
+    max-height: 56rem;
+  }
+
+  .portada-calma .contenedor > * {
+    flex: 1;
+  }
+
+  .escena {
+    min-height: 34rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .escena img,
+  .escena::after,
+  .portada-calma .aparecer,
+  .revelar {
+    animation: none !important;
+  }
+
+  .tarjeta:hover img,
+  .categoria:hover img,
+  .boton:hover {
+    transform: none;
+  }
+}
+
+.boton {
+  transition: background-color var(--transicion), border-color var(--transicion), color var(--transicion), transform var(--transicion);
+}
+
+
+/* ==========================================================
+   30. CAPA PREMIUM
+   Tipografía editorial, hilos dorados, vitrina de producto,
+   compromisos y firma de marca. Misma calma, más categoría.
+   ========================================================== */
+
+/* Títulos con serif editorial (como las casas de lujo) */
+h1,
+h2,
+.manifiesto p.grande,
+.frase h2,
+.logo-nombre,
+.marcas-texto .logo-marca {
+  font-family: var(--fuente-editorial);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.logo-nombre {
+  letter-spacing: 0.34em;
+}
+
+.portada-calma h1 {
+  font-size: clamp(2.8rem, 7.4vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.portada-calma h1 em,
+.frase h2 em,
+.vitrina h2 em {
+  font-style: italic;
+  color: var(--color-cuero);
+}
+
+/* Antetítulo con hilo dorado delante */
+.antetitulo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-cuero);
+}
+
+.antetitulo::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background-color: var(--color-dorado);
+}
+
+.llamada .antetitulo,
+.frase .antetitulo {
+  justify-content: center;
+}
+
+/* Botones rectos y finos: más sastrería, menos app */
+.boton {
+  padding: 1.05rem 2.2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  border-radius: 0;
+}
+
+.boton-oro {
+  color: var(--color-negro);
+}
+
+/* Hilo dorado separador */
+.hilo {
+  width: 4rem;
+  height: 1px;
+  margin: var(--espacio-m) 0;
+  border: 0;
+  background-color: var(--color-dorado);
+}
+
+/* ---------- 30b. Vitrina: la pieza de la temporada ---------- */
+.vitrina {
+  position: relative;
+  color: #d9d1c4;
+  background-color: var(--color-negro);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vitrina > img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 74% 50%;     /* en móvil, centrada en la maleta */
+}
+
+.vitrina-texto {
+  padding: var(--espacio-l) var(--espacio-s);
+}
+
+.vitrina h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--color-marfil);
+}
+
+.vitrina h2 em {
+  color: var(--color-dorado);
+}
+
+.vitrina .antetitulo {
+  color: var(--color-dorado);
+}
+
+.ficha-corta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s) var(--espacio-l);
+  margin: var(--espacio-m) 0;
+  padding: var(--espacio-m) 0 0;
+  list-style: none;
+  border-top: 1px solid hsla(36, 33%, 57%, 0.35);
+}
+
+.ficha-corta strong {
+  display: block;
+  font-family: var(--fuente-editorial);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-marfil);
+}
+
+.ficha-corta span {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a59c8f;
+}
+
+.vitrina .boton-secundario {
+  color: var(--color-marfil);
+  border-color: hsla(36, 33%, 57%, 0.7);
+}
+
+.vitrina .boton-secundario:hover {
+  color: var(--color-negro);
+  background-color: var(--color-marfil);
+}
+
+/* ---------- 30c. Compromisos Arsamar ---------- */
+.compromisos {
+  display: grid;
+  gap: var(--espacio-l) var(--espacio-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: compromiso;
+}
+
+.compromisos li {
+  counter-increment: compromiso;
+  padding-top: var(--espacio-m);
+  border-top: 1px solid var(--color-dorado);
+}
+
+.compromisos li::before {
+  content: counter(compromiso, upper-roman);
+  display: block;
+  margin-bottom: var(--espacio-s);
+  font-family: var(--fuente-editorial);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--color-dorado);
+}
+
+.compromisos h3 {
+  margin-bottom: var(--espacio-xs);
+  font-size: 1.15rem;
+}
+
+.compromisos p {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- 30d. Sello ---------- */
+.con-sello {
+  position: relative;
+}
+
+.sello {
+  width: 7.5rem;
+  margin-bottom: var(--espacio-m);
+  animation: girar 60s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- 30e. Firma de marca en el pie ---------- */
+.firma {
+  margin: 0 0 var(--espacio-l);
+  font-family: var(--fuente-editorial);
+  font-size: clamp(3.4rem, 15vw, 13rem);
+  line-height: 0.9;
+  letter-spacing: 0.12em;
+  text-align: center;
+  white-space: nowrap;
+  color: hsla(36, 30%, 85%, 0.1);
+  overflow: hidden;
+}
+
+body > footer {
+  background-color: var(--color-negro);
+}
+
+/* ---------- 30f. Tablet y escritorio ---------- */
+@media (min-width: 600px) {
+  .compromisos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .compromisos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .vitrina > img {
+    aspect-ratio: auto;
+    height: 46rem;
+  }
+
+  .vitrina-texto {
+    position: absolute;
+    inset: 0 auto 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(46%, 36rem);
+    padding: var(--espacio-xl) 0 var(--espacio-xl) max(var(--espacio-m), calc((100vw - var(--ancho-max)) / 2 + var(--espacio-m)));
+  }
+
+  .vitrina::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, hsla(30, 8%, 7%, 0.85) 0%, hsla(30, 8%, 7%, 0.4) 40%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .vitrina-texto {
+    z-index: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sello {
+    animation: none;
+  }
+}
+
+/* Titular de portada: tres líneas en escritorio */
+.portada-calma h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.5rem);
+  line-height: 1.04;
+}
+
+@media (min-width: 960px) {
+  .portada-calma .contenedor > div:first-child {
+    flex: 1.25;
+  }
+}
+
+.dos-columnas img.sello {
+  width: 7.5rem;
+  border-radius: 0;
+}

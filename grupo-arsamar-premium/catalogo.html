@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo profesional de maletas, bolsas de viaje y mochilas de las marcas Jaslen, Itaca y Skpat.">
+  <title>Colecciones | Grupo Arsamar</title>
+  <link rel="icon" href="img/logo-simbolo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Barra superior: deja claro desde el primer segundo que es una web para profesionales -->
+  <p class="barra-superior">Web para tiendas y distribuidores · <a href="distribuidores.html#alta">Solicita el catálogo</a></p>
+
+  <!-- Cabecera: se repite igual en todas las páginas -->
+  <header>
+    <p class="logo">
+      <a href="index.html">
+        <img src="img/logo-simbolo.svg" alt="" width="64" height="64">
+        <span class="logo-texto">
+          <span class="logo-nombre">Arsamar</span>
+          <span class="logo-lema">Grupo · Equipaje de viaje</span>
+        </span>
+      </a>
+    </p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="grupo.html">El grupo</a></li>
+        <li><a href="catalogo.html" aria-current="page">Colecciones</a></li>
+        <li><a href="distribuidores.html">Distribuidores</a></li>
+        <li><a href="member.html" class="enlace-member">Member</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="herramientas">
+      <!-- Buscador: sugiere modelos con datalist y lleva al catálogo -->
+      <form class="buscador" action="catalogo.html" method="get" role="search">
+        <label for="buscar">Buscar un modelo</label>
+        <input type="search" id="buscar" name="q" list="modelos" placeholder="Buscar modelo">
+        <datalist id="modelos">
+          <option value="Jaslen Venecia">
+          <option value="Jaslen Padua">
+          <option value="Jaslen Varese">
+          <option value="Jaslen Turín">
+          <option value="Jaslen Colchester">
+          <option value="Jaslen Nápoles">
+          <option value="Itaca Havel">
+          <option value="Itaca Loira">
+          <option value="Itaca Cassley">
+          <option value="Itaca Witham">
+          <option value="Skpat Niza">
+          <option value="Skpat NYC">
+        </datalist>
+        <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </form>
+      <a class="icono" href="member-acceso.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor"/></svg><span>Acceso Member</span></a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <header class="cabecera-pagina">
+      <div class="contenedor">
+        <p class="antetitulo">Catálogo para profesionales</p>
+        <h1>Colecciones</h1>
+        <p class="intro">Una selección de nuestros modelos. Solicita el catálogo completo con referencias, tarifas profesionales y disponibilidad.</p>
+        <!-- Filtro sin JavaScript: radios ocultos + selector :has() en el CSS (sección 23h) -->
+        <form class="filtros" action="#">
+          <fieldset>
+            <legend class="antetitulo">Filtrar por marca</legend>
+            <input type="radio" name="marca" id="f-todas" checked><label for="f-todas">Todas</label>
+            <input type="radio" name="marca" id="f-jaslen"><label for="f-jaslen">Jaslen</label>
+            <input type="radio" name="marca" id="f-itaca"><label for="f-itaca">Itaca</label>
+            <input type="radio" name="marca" id="f-skpat"><label for="f-skpat">Skpat</label>
+            <input type="radio" name="marca" id="f-member"><label for="f-member">◆ Exclusivos Member</label>
+          </fieldset>
+        </form>
+      </div>
+    </header>
+
+    <section class="seccion-marca" id="jaslen">
+      <div class="contenedor">
+        <header>
+          <p class="etiqueta">Clásica</p>
+          <h2 class="logo-marca logo-jaslen">Jaslen</h2>
+          <p class="intro">Líneas sobrias y acabados cuidados para quien viaja a menudo y quiere una maleta que dure. Rígidas y semirrígidas en colores serenos.</p>
+        </header>
+        <div class="rejilla-productos">
+          <article class="tarjeta">
+            <a href="producto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-venecia.svg" alt="Maleta grande Jaslen Venecia" width="800" height="800">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="producto.html">Venecia</a></h3>
+            <p class="meta">Maleta grande<br>Polipropileno · 105 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-padua.svg" alt="Maleta mediana Jaslen Padua" width="800" height="800">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="contacto.html">Padua</a></h3>
+            <p class="meta">Maleta mediana<br>ABS · 68 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-varese.svg" alt="Maleta mediana Jaslen Varese" width="800" height="800">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="contacto.html">Varese</a></h3>
+            <p class="meta">Maleta mediana<br>Polipropileno · 61 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-turin.svg" alt="Maleta de cabina Jaslen Turín" width="800" height="800">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="contacto.html">Turín</a></h3>
+            <p class="meta">Maleta de cabina<br>ABS · 38 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-colchester.svg" alt="Juego de maletas semirrígidas Jaslen Colchester" width="800" height="800">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="contacto.html">Colchester</a></h3>
+            <p class="meta">Juego de maletas semirrígidas<br>EVA · 90 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-napoles.svg" alt="Bolsa de viaje Jaslen Nápoles" width="800" height="800">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="contacto.html">Nápoles</a></h3>
+            <p class="meta">Bolsa de viaje<br>Poliéster</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-marca" id="itaca">
+      <div class="contenedor">
+        <header>
+          <p class="etiqueta">Versátil</p>
+          <h2 class="logo-marca logo-itaca">Itaca</h2>
+          <p class="intro">La maleta de todos los días: ligera, resistente y con una relación calidad-precio que se vende sola en el mostrador.</p>
+        </header>
+        <div class="rejilla-productos">
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/itaca-havel.svg" alt="Maleta mediana Itaca Havel" width="800" height="800">
+            </a>
+            <p class="marca-producto">Itaca</p>
+            <h3><a href="contacto.html">Havel</a></h3>
+            <p class="meta">Maleta mediana<br>ABS · 58 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/itaca-loira.svg" alt="Maleta de cabina Itaca Loira" width="800" height="800">
+            </a>
+            <p class="marca-producto">Itaca</p>
+            <h3><a href="contacto.html">Loira</a></h3>
+            <p class="meta">Maleta de cabina<br>Polipropileno · 38 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/itaca-cassley.svg" alt="Maleta de cabina semirrígida Itaca Cassley" width="800" height="800">
+            </a>
+            <p class="marca-producto">Itaca</p>
+            <h3><a href="contacto.html">Cassley</a></h3>
+            <p class="meta">Maleta de cabina semirrígida<br>EVA · 36 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/itaca-witham.svg" alt="Mochila de viaje de cabina Itaca Witham" width="800" height="800">
+            </a>
+            <p class="marca-producto">Itaca</p>
+            <h3><a href="contacto.html">Witham</a></h3>
+            <p class="meta">Mochila de viaje de cabina<br>Poliéster</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-marca" id="skpat">
+      <div class="contenedor">
+        <header>
+          <p class="etiqueta">Urbana</p>
+          <h2 class="logo-marca logo-skpat">Skpat</h2>
+          <p class="intro">Colores y diseño con carácter para un público joven: maletas de cabina y mochilas para la ciudad y el fin de semana.</p>
+        </header>
+        <div class="rejilla-productos">
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/skpat-niza.svg" alt="Maleta de cabina Skpat Niza" width="800" height="800">
+            </a>
+            <p class="marca-producto">Skpat</p>
+            <h3><a href="contacto.html">Niza</a></h3>
+            <p class="meta">Maleta de cabina<br>Policarbonato · 38 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/skpat-nyc.svg" alt="Mochila urbana Skpat NYC" width="800" height="800">
+            </a>
+            <p class="marca-producto">Skpat</p>
+            <h3><a href="contacto.html">NYC</a></h3>
+            <p class="meta">Mochila urbana<br>Poliéster · 20 L</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-marca tema-member" id="exclusivos">
+      <div class="contenedor">
+        <header>
+          <p class="sello-member">Arsamar Member</p>
+          <h2>Ediciones exclusivas</h2>
+          <p class="intro">Modelos y colores que solo venden las tiendas Member. Series limitadas y numeradas.</p>
+        </header>
+        <div class="rejilla-productos">
+          <article class="tarjeta tarjeta-exclusiva">
+            <p class="sello-member">Exclusivo Member</p>
+            <img src="img/member-venecia-cuero.svg" alt="Jaslen · Edición Member Venecia Cuero" width="800" height="800">
+            <p class="candado">Solo tiendas Member</p>
+            <p class="marca-producto">Jaslen · Edición Member</p>
+            <h3>Venecia Cuero</h3>
+            <p class="meta">Maleta grande, color cuero con detalles dorados<br>Serie numerada</p>
+          </article>
+          <article class="tarjeta tarjeta-exclusiva">
+            <p class="sello-member">Exclusivo Member</p>
+            <img src="img/member-turin-noir.svg" alt="Jaslen · Edición Member Turín Noir" width="800" height="800">
+            <p class="candado">Solo tiendas Member</p>
+            <p class="marca-producto">Jaslen · Edición Member</p>
+            <h3>Turín Noir</h3>
+            <p class="meta">Maleta de cabina negra con herrajes dorados<br>Serie numerada</p>
+          </article>
+        </div>
+        <p class="botones"><a class="boton boton-oro" href="member.html">Cómo ser tienda Member</a></p>
+      </div>
+    </section>
+
+    <section class="bloque llamada">
+      <div class="contenedor estrecho">
+        <h2>¿Necesitas precios y disponibilidad?</h2>
+        <p>Las tarifas profesionales se envían a tiendas y distribuidores registrados.</p>
+        <p class="botones"><a class="boton boton-cuero" href="distribuidores.html#alta">Solicitar catálogo y tarifas</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie: se repite igual en todas las páginas -->
+  <footer>
+    <p class="firma" aria-hidden="true">ARSAMAR</p>
+    <div class="contenedor">
+      <div class="pie-rejilla">
+        <section>
+          <p class="logo-nombre">Arsamar</p>
+          <p>Grupo familiar de Atzeneta d'Albaida dedicado al diseño y la distribución de maletas, bolsas de viaje y mochilas con las marcas Jaslen, Itaca y Skpat.</p>
+        </section>
+        <section>
+          <h2>El grupo</h2>
+          <ul>
+            <li><a href="grupo.html">Quiénes somos</a></li>
+            <li><a href="catalogo.html">Colecciones</a></li>
+            <li><a href="distribuidores.html">Distribuidores</a></li>
+            <li><a href="member.html">Arsamar Member</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Marcas</h2>
+          <ul>
+            <li><a href="catalogo.html#jaslen">Jaslen</a></li>
+            <li><a href="catalogo.html#itaca">Itaca</a></li>
+            <li><a href="catalogo.html#skpat">Skpat</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contacto</h2>
+          <!-- CONFIRMAR: teléfono, correo y dirección completa reales -->
+          <address>
+            Arsamar Enterprise, S.L.<br>
+            46869 Atzeneta d'Albaida (València)<br>
+            <a href="tel:+34960000000">+34 960 00 00 00</a><br>
+            <a href="mailto:comercial@arsamar.com">comercial@arsamar.com</a>
+          </address>
+        </section>
+      </div>
+      <div class="pie-final">
+        <p>&copy; 2026 Grupo Arsamar · Arsamar Enterprise, S.L. Todos los derechos reservados.</p>
+        <p><a href="legal.html#aviso-legal">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

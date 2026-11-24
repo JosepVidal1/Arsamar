@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grupo Arsamar diseña y distribuye maletas, bolsas de viaje y mochilas con las marcas Jaslen, Itaca y Skpat. Atención a tiendas y distribuidores desde Atzeneta d'Albaida.">
+  <title>Grupo Arsamar | Maletas y artículos de viaje para tiendas y distribuidores</title>
+  <link rel="icon" href="img/logo-simbolo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Barra superior: deja claro desde el primer segundo que es una web para profesionales -->
+  <p class="barra-superior">Atención exclusiva a tiendas y distribuidores · <a href="distribuidores.html#alta">Solicita el catálogo profesional</a></p>
+
+  <!-- Cabecera: se repite igual en todas las páginas -->
+  <header>
+    <p class="logo">
+      <a href="index.html">
+        <img src="img/logo-simbolo.svg" alt="" width="64" height="64">
+        <span class="logo-texto">
+          <span class="logo-nombre">Arsamar</span>
+          <span class="logo-lema">Grupo · Equipaje de viaje</span>
+        </span>
+      </a>
+    </p>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="grupo.html">El grupo</a></li>
+        <li><a href="catalogo.html">Marcas y catálogo</a></li>
+        <li><a href="distribuidores.html">Distribuidores</a></li>
+        <li><a href="member.html" class="enlace-member">Arsamar Member</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="herramientas">
+      <!-- Buscador: sugiere modelos con datalist y lleva al catálogo -->
+      <form class="buscador" action="catalogo.html" method="get" role="search">
+        <label for="buscar">Buscar un modelo</label>
+        <input type="search" id="buscar" name="q" list="modelos" placeholder="Buscar modelo">
+        <datalist id="modelos">
+          <option value="Jaslen Venecia">
+          <option value="Jaslen Padua">
+          <option value="Jaslen Varese">
+          <option value="Jaslen Turín">
+          <option value="Jaslen Colchester">
+          <option value="Jaslen Nápoles">
+          <option value="Itaca Havel">
+          <option value="Itaca Loira">
+          <option value="Itaca Cassley">
+          <option value="Itaca Witham">
+          <option value="Skpat Niza">
+          <option value="Skpat NYC">
+        </datalist>
+        <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </form>
+      <a class="icono" href="member-acceso.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor"/></svg><span>Acceso Member</span></a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- 1. Portada a pantalla completa: qué somos, para quién y qué hacer -->
+    <section class="portada">
+      <img src="img/portada.svg" alt="Maletas rígidas de las marcas del Grupo Arsamar" width="1600" height="900">
+      <div class="contenedor portada-texto">
+        <p class="antetitulo">Grupo Arsamar · Atzeneta d'Albaida</p>
+        <h1>Equipaje bien hecho para tiendas que cuidan a sus clientes</h1>
+        <p>Diseñamos y distribuimos las marcas Jaslen, Itaca y Skpat. Producto fiable, precio justo y trato directo con quien decide.</p>
+        <p class="botones">
+          <a class="boton boton-cuero" href="distribuidores.html#alta">Hazte distribuidor</a>
+          <a class="boton boton-secundario" href="catalogo.html">Ver el catálogo</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Datos de confianza: hechos comprobables, no adjetivos -->
+    <section aria-label="Grupo Arsamar en datos" class="bloque-crema">
+      <div class="contenedor">
+        <ul class="datos">
+          <li><strong>3 marcas propias</strong><span>Jaslen, Itaca y Skpat</span></li>
+          <li><strong>Almacén propio</strong><span>Stock y salida desde Atzeneta d'Albaida</span></li>
+          <li><strong>Presentes en Decathlon</strong><span>Vendedor oficial en decathlon.es</span></li>
+          <li><strong>Empresa familiar</strong><span>Hablas directamente con la propiedad</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. El grupo -->
+    <section class="bloque">
+      <div class="contenedor dos-columnas">
+        <img src="img/grupo-almacen.svg" alt="Almacén del Grupo Arsamar en Atzeneta d'Albaida" width="1000" height="750">
+        <div>
+          <p class="antetitulo">El grupo</p>
+          <h2>Un grupo familiar con una sola forma de trabajar</h2>
+          <blockquote class="cita">
+            <p>«Nacida fruto de la ilusión y del trabajo bien hecho.»</p>
+          </blockquote>
+          <p>Diseño, compra, almacén y distribución bajo el mismo techo. Eso nos permite controlar cada maleta que sale hacia tu tienda y responderte sin intermediarios.</p>
+          <p><a class="enlace-flecha" href="grupo.html">Conoce el Grupo Arsamar</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Marcas -->
+    <section class="bloque bloque-crema">
+      <div class="contenedor">
+        <header class="cabecera-bloque">
+          <p class="antetitulo">Nuestras marcas</p>
+          <h2>Tres marcas, un mismo estándar</h2>
+          <p class="intro">Cada marca cubre un perfil de cliente distinto. Juntas te permiten montar un lineal completo de equipaje con un único proveedor.</p>
+        </header>
+        <div class="rejilla-3">
+          <article class="marca">
+            <img src="img/marca-jaslen.svg" alt="Maletas de la marca Jaslen" width="800" height="600">
+            <div class="marca-cuerpo">
+              <p class="etiqueta">Clásica</p>
+              <h3 class="logo-marca logo-jaslen">Jaslen</h3>
+              <p>Líneas sobrias y acabados cuidados para quien viaja a menudo y quiere una maleta que dure. Rígidas y semirrígidas en colores serenos.</p>
+              <a class="enlace-flecha" href="catalogo.html#jaslen">Ver la colección Jaslen</a>
+            </div>
+          </article>
+          <article class="marca">
+            <img src="img/marca-itaca.svg" alt="Maletas de la marca Itaca" width="800" height="600">
+            <div class="marca-cuerpo">
+              <p class="etiqueta">Versátil</p>
+              <h3 class="logo-marca logo-itaca">Itaca</h3>
+              <p>La maleta de todos los días: ligera, resistente y con una relación calidad-precio que se vende sola en el mostrador.</p>
+              <a class="enlace-flecha" href="catalogo.html#itaca">Ver la colección Itaca</a>
+            </div>
+          </article>
+          <article class="marca">
+            <img src="img/marca-skpat.svg" alt="Maletas de la marca Skpat" width="800" height="600">
+            <div class="marca-cuerpo">
+              <p class="etiqueta">Urbana</p>
+              <h3 class="logo-marca logo-skpat">Skpat</h3>
+              <p>Colores y diseño con carácter para un público joven: maletas de cabina y mochilas para la ciudad y el fin de semana.</p>
+              <a class="enlace-flecha" href="catalogo.html#skpat">Ver la colección Skpat</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Arsamar Member: lo que nos diferencia de la competencia -->
+    <section class="bloque tema-member banda-member">
+      <div class="contenedor dos-columnas">
+        <div>
+          <p class="sello-member">Por invitación</p>
+          <h2>Arsamar Member. El círculo de nuestras mejores tiendas</h2>
+          <p class="intro">Un programa privado para las tiendas físicas que crecen con nosotros. No es un descuento: es formar parte de la casa.</p>
+          <ul class="lista-oro">
+            <li>Acceso anticipado a cada nueva temporada</li>
+            <li>Ediciones exclusivas que solo venden las tiendas Member</li>
+            <li>Merchandising de firma para tu tienda y tu equipo</li>
+            <li>Prioridad de stock y un gestor personal</li>
+          </ul>
+          <p class="botones">
+            <a class="boton boton-oro" href="member.html">Descubrir Arsamar Member</a>
+            <a class="boton boton-secundario" href="member-acceso.html">Acceso miembros</a>
+          </p>
+        </div>
+        <img src="img/member-tarjeta.svg" alt="Tarjeta de colaborador Arsamar Member" width="900" height="700">
+      </div>
+    </section>
+
+    <!-- 6. Por qué trabajar con nosotros -->
+    <section class="bloque">
+      <div class="contenedor">
+        <header class="cabecera-bloque">
+          <p class="antetitulo">Para tu negocio</p>
+          <h2>Por qué las tiendas trabajan con Arsamar</h2>
+        </header>
+        <ol class="ventajas">
+          <li>
+            <h3>Un surtido pensado para rotar</h3>
+            <p>Cabina, mediana, grande y juegos completos en las tallas y colores que más se venden. Menos stock parado en tu almacén.</p>
+          </li>
+          <li>
+            <h3>Stock y servicio desde Atzeneta</h3>
+            <p>Preparamos los pedidos en nuestro propio almacén. Sabes lo que hay disponible y cuándo te llega.</p>
+          </li>
+          <li>
+            <h3>Material de venta listo para usar</h3>
+            <p>Catálogo, fichas técnicas y fotografías de producto para tu escaparate, tu tienda online y tus redes.</p>
+          </li>
+          <li>
+            <h3>Un interlocutor, no una centralita</h3>
+            <p>Somos una empresa familiar. Cuando llamas, hablas con alguien que conoce tu tienda y tu historial de pedidos.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Modelos destacados (sin precio: es una web profesional) -->
+    <section class="bloque bloque-crema">
+      <div class="contenedor">
+        <header class="cabecera-bloque">
+          <p class="antetitulo">Catálogo</p>
+          <h2>Modelos destacados de la temporada</h2>
+          <p class="intro">Precios profesionales y condiciones disponibles para tiendas y distribuidores registrados.</p>
+        </header>
+        <div class="rejilla-productos">
+          <article class="tarjeta">
+            <a href="producto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-venecia.svg" alt="Maleta grande Jaslen Venecia" width="600" height="600">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="producto.html">Venecia</a></h3>
+            <p class="meta">Maleta grande<br>Polipropileno · 105 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/jaslen-colchester.svg" alt="Juego de maletas semirrígidas Jaslen Colchester" width="600" height="600">
+            </a>
+            <p class="marca-producto">Jaslen</p>
+            <h3><a href="contacto.html">Colchester</a></h3>
+            <p class="meta">Juego de maletas semirrígidas<br>EVA · 90 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/itaca-havel.svg" alt="Maleta mediana Itaca Havel" width="600" height="600">
+            </a>
+            <p class="marca-producto">Itaca</p>
+            <h3><a href="contacto.html">Havel</a></h3>
+            <p class="meta">Maleta mediana<br>ABS · 58 L</p>
+          </article>
+          <article class="tarjeta">
+            <a href="contacto.html" tabindex="-1" aria-hidden="true">
+              <img src="img/skpat-niza.svg" alt="Maleta de cabina Skpat Niza" width="600" height="600">
+            </a>
+            <p class="marca-producto">Skpat</p>
+            <h3><a href="contacto.html">Niza</a></h3>
+            <p class="meta">Maleta de cabina<br>Policarbonato · 38 L</p>
+          </article>
+        </div>
+        <p class="botones"><a class="boton boton-secundario" href="catalogo.html">Ver todo el catálogo</a></p>
+      </div>
+    </section>
+
+    <!-- 8. Cómo empezar -->
+    <section class="bloque">
+      <div class="contenedor">
+        <header class="cabecera-bloque">
+          <p class="antetitulo">Cómo empezar</p>
+          <h2>Trabajar con nosotros es sencillo</h2>
+        </header>
+        <ol class="pasos">
+          <li>
+            <h3>Solicita el alta</h3>
+            <p>Rellena el formulario de distribuidores con los datos de tu negocio. Te respondemos personalmente.</p>
+          </li>
+          <li>
+            <h3>Recibe catálogo y condiciones</h3>
+            <p>Te enviamos el catálogo profesional con tarifas y te asesoramos sobre el surtido que mejor encaja con tu tienda.</p>
+          </li>
+          <li>
+            <h3>Crece con nosotros</h3>
+            <p>Las tiendas que mejor trabajan nuestras marcas reciben la invitación a Arsamar Member.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 9. Llamada a la acción final -->
+    <section class="bloque bloque-oscuro llamada">
+      <div class="contenedor estrecho">
+        <p class="antetitulo">Hablemos</p>
+        <h2>¿Quieres incorporar nuestras marcas a tu tienda?</h2>
+        <p>Cuéntanos cómo es tu negocio y te preparamos una propuesta a medida, sin compromiso.</p>
+        <p class="botones">
+          <a class="boton boton-cuero" href="distribuidores.html#alta">Solicitar alta de distribuidor</a>
+          <a class="boton boton-secundario" href="contacto.html">Contactar</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie: se repite igual en todas las páginas -->
+  <footer>
+    <div class="contenedor">
+      <div class="pie-rejilla">
+        <section>
+          <p class="logo-nombre">Arsamar</p>
+          <p>Grupo familiar de Atzeneta d'Albaida dedicado al diseño y la distribución de maletas, bolsas de viaje y mochilas con las marcas Jaslen, Itaca y Skpat.</p>
+        </section>
+        <section>
+          <h2>El grupo</h2>
+          <ul>
+            <li><a href="grupo.html">Quiénes somos</a></li>
+            <li><a href="catalogo.html">Marcas y catálogo</a></li>
+            <li><a href="distribuidores.html">Distribuidores</a></li>
+            <li><a href="member.html">Arsamar Member</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Marcas</h2>
+          <ul>
+            <li><a href="catalogo.html#jaslen">Jaslen</a></li>
+            <li><a href="catalogo.html#itaca">Itaca</a></li>
+            <li><a href="catalogo.html#skpat">Skpat</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Contacto</h2>
+          <!-- CONFIRMAR: teléfono, correo y dirección completa reales -->
+          <address>
+            Arsamar Enterprise, S.L.<br>
+            46869 Atzeneta d'Albaida (València)<br>
+            <a href="tel:+34960000000">+34 960 00 00 00</a><br>
+            <a href="mailto:comercial@arsamar.com">comercial@arsamar.com</a>
+          </address>
+        </section>
+      </div>
+      <div class="pie-final">
+        <p>&copy; 2026 Grupo Arsamar · Arsamar Enterprise, S.L. Todos los derechos reservados.</p>
+        <p><a href="legal.html#aviso-legal">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

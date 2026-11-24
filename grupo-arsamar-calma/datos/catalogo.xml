@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Catálogo del Grupo Arsamar (XML bien formado).
+     Nombres, medidas y capacidades: fichas públicas de Arsamar en decathlon.es. CONFIRMAR con el cliente.
+     Las ediciones Member y los avances son conceptos de ejemplo. -->
+<catalogo grupo="Grupo Arsamar" tipo="B2B">
+  <producto id="jaslen-venecia" marca="Jaslen" acceso="profesional">
+    <nombre>Venecia</nombre>
+    <tipo>Maleta grande</tipo>
+    <material>Polipropileno</material>
+    <medidas>49 × 77 × 32 cm</medidas>
+    <capacidad unidad="L">105</capacidad>
+    <imagen>img/jaslen-venecia.svg</imagen>
+  </producto>
+  <producto id="jaslen-padua" marca="Jaslen" acceso="profesional">
+    <nombre>Padua</nombre>
+    <tipo>Maleta mediana</tipo>
+    <material>ABS</material>
+    <medidas>43 × 65 × 27 cm</medidas>
+    <capacidad unidad="L">68</capacidad>
+    <imagen>img/jaslen-padua.svg</imagen>
+  </producto>
+  <producto id="jaslen-varese" marca="Jaslen" acceso="profesional">
+    <nombre>Varese</nombre>
+    <tipo>Maleta mediana</tipo>
+    <material>Polipropileno</material>
+    <medidas>41 × 64 × 26 cm</medidas>
+    <capacidad unidad="L">61</capacidad>
+    <imagen>img/jaslen-varese.svg</imagen>
+  </producto>
+  <producto id="jaslen-turin" marca="Jaslen" acceso="profesional">
+    <nombre>Turín</nombre>
+    <tipo>Maleta de cabina</tipo>
+    <material>ABS</material>
+    <medidas>40 × 55 × 20 cm</medidas>
+    <capacidad unidad="L">38</capacidad>
+    <imagen>img/jaslen-turin.svg</imagen>
+  </producto>
+  <producto id="jaslen-colchester" marca="Jaslen" acceso="profesional">
+    <nombre>Colchester</nombre>
+    <tipo>Juego de maletas semirrígidas</tipo>
+    <material>EVA</material>
+    <medidas>46,5 × 78 × 29 cm (grande)</medidas>
+    <capacidad unidad="L">90</capacidad>
+    <imagen>img/jaslen-colchester.svg</imagen>
+  </producto>
+  <producto id="jaslen-napoles" marca="Jaslen" acceso="profesional">
+    <nombre>Nápoles</nombre>
+    <tipo>Bolsa de viaje</tipo>
+    <material>Poliéster</material>
+    <imagen>img/jaslen-napoles.svg</imagen>
+  </producto>
+  <producto id="itaca-havel" marca="Itaca" acceso="profesional">
+    <nombre>Havel</nombre>
+    <tipo>Maleta mediana</tipo>
+    <material>ABS</material>
+    <medidas>63 cm de alto</medidas>
+    <capacidad unidad="L">58</capacidad>
+    <imagen>img/itaca-havel.svg</imagen>
+  </producto>
+  <producto id="itaca-loira" marca="Itaca" acceso="profesional">
+    <nombre>Loira</nombre>
+    <tipo>Maleta de cabina</tipo>
+    <material>Polipropileno</material>
+    <medidas>38 × 55 × 20 cm</medidas>
+    <capacidad unidad="L">38</capacidad>
+    <imagen>img/itaca-loira.svg</imagen>
+  </producto>
+  <producto id="itaca-cassley" marca="Itaca" acceso="profesional">
+    <nombre>Cassley</nombre>
+    <tipo>Maleta de cabina semirrígida</tipo>
+    <material>EVA</material>
+    <medidas>55 cm de alto</medidas>
+    <capacidad unidad="L">36</capacidad>
+    <imagen>img/itaca-cassley.svg</imagen>
+  </producto>
+  <producto id="itaca-witham" marca="Itaca" acceso="profesional">
+    <nombre>Witham</nombre>
+    <tipo>Mochila de viaje de cabina</tipo>
+    <material>Poliéster</material>
+    <imagen>img/itaca-witham.svg</imagen>
+  </producto>
+  <producto id="skpat-niza" marca="Skpat" acceso="profesional">
+    <nombre>Niza</nombre>
+    <tipo>Maleta de cabina</tipo>
+    <material>Policarbonato</material>
+    <medidas>40 × 55 × 18 cm</medidas>
+    <capacidad unidad="L">38</capacidad>
+    <imagen>img/skpat-niza.svg</imagen>
+  </producto>
+  <producto id="skpat-nyc" marca="Skpat" acceso="profesional">
+    <nombre>NYC</nombre>
+    <tipo>Mochila urbana</tipo>
+    <material>Poliéster</material>
+    <capacidad unidad="L">20</capacidad>
+    <imagen>img/skpat-nyc.svg</imagen>
+  </producto>
+  <producto id="member-venecia-cuero" marca="Jaslen" acceso="member-exclusivo">
+    <nombre>Venecia Cuero</nombre>
+    <descripcion>Maleta grande, color cuero con detalles dorados</descripcion>
+    <nota>Serie numerada</nota>
+    <imagen>img/member-venecia-cuero.svg</imagen>
+  </producto>
+  <producto id="member-turin-noir" marca="Jaslen" acceso="member-exclusivo">
+    <nombre>Turín Noir</nombre>
+    <descripcion>Maleta de cabina negra con herrajes dorados</descripcion>
+    <nota>Serie numerada</nota>
+    <imagen>img/member-turin-noir.svg</imagen>
+  </producto>
+  <producto id="avance-jaslen-oslo" marca="Jaslen" acceso="member-avance">
+    <nombre>Oslo</nombre>
+    <descripcion>Maleta mediana · verde musgo</descripcion>
+    <nota>Preventa en 12 días</nota>
+    <imagen>img/avance-jaslen-oslo.svg</imagen>
+  </producto>
+  <producto id="avance-itaca-tajo" marca="Itaca" acceso="member-avance">
+    <nombre>Tajo</nombre>
+    <descripcion>Maleta de cabina · gris niebla</descripcion>
+    <nota>Preventa en 12 días</nota>
+    <imagen>img/avance-itaca-tajo.svg</imagen>
+  </producto>
+  <producto id="avance-skpat-tokio" marca="Skpat" acceso="member-avance">
+    <nombre>Tokio</nombre>
+    <descripcion>Maleta de cabina · rosa arena</descripcion>
+    <nota>Preventa en 26 días</nota>
+    <imagen>img/avance-skpat-tokio.svg</imagen>
+  </producto>
+</catalogo>
